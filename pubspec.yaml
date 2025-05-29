@@ -3,7 +3,7 @@ description: >
   A singleton wrapper for connectivity_plus to avoid listener conflicts in plugins and apps.
   This ensures that both plugins and your app can listen to network status changes safely.
 
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/carlcy/network_connectivity_bridge
 repository: https://github.com/carlcy/network_connectivity_bridge
 issue_tracker: https://github.com/carlcy/network_connectivity_bridge/issues

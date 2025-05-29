@@ -1,3 +1,7 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+- Initial release.
+
+## 0.0.2
+
+- 修复 Android/ios 插件目录结构错误，添加主类 NetworkConnectivityBridgePlugin。
