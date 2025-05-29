@@ -1,4 +1,4 @@
-group 'network_connectivity_bridge'
+group 'network_connectivity_bridge'  // ✅ 推荐写法
 version '1.0'
 
 buildscript {
@@ -8,10 +8,9 @@ buildscript {
     }
 }
 
-rootProject.allprojects {
+allprojects {
     repositories {
         google()
         mavenCentral()
     }
 }
-
