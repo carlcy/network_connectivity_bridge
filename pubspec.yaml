@@ -1,16 +1,34 @@
 name: network_connectivity_bridge
-description: A singleton connectivity bridge plugin based on connectivity_plus.
-version: 1.0.0
+description: >
+  A singleton wrapper for connectivity_plus to avoid listener conflicts in plugins and apps.
+  This ensures that both plugins and your app can listen to network status changes safely.
+
+version: 0.0.1
 homepage: https://github.com/carlcy/network_connectivity_bridge
 repository: https://github.com/carlcy/network_connectivity_bridge
 issue_tracker: https://github.com/carlcy/network_connectivity_bridge/issues
 
 environment:
-  sdk: ">=2.17.0 <4.0.0"
+  sdk: ">=3.1.0 <4.0.0"
+  flutter: ">=2.5.0"
 
 dependencies:
-  connectivity_plus: ^6.0.0
-
-dev_dependencies:
-  flutter_test:
+  flutter:
     sdk: flutter
+  plugin_platform_interface: ^2.1.6
+  flutter_web_plugins:
+    sdk: flutter
+  web: ^1.1.1
+  connectivity_plus: ^6.1.4
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: network_connectivity_bridge
+        pluginClass: NetworkConnectivityBridgePlugin
+      ios:
+        pluginClass: NetworkConnectivityBridgePlugin
+      web:
+        pluginClass: NetworkConnectivityBridgeWeb
+        fileName: network_connectivity_bridge_web.dart
