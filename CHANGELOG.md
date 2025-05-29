@@ -8,3 +8,6 @@
 
 ## 0.0.3
 - 新增build.gradle文件
+
+## 0.0.4
+- 更新build.gradle文件
