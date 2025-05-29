@@ -5,3 +5,6 @@
 ## 0.0.2
 
 - 修复 Android/ios 插件目录结构错误，添加主类 NetworkConnectivityBridgePlugin。
+
+## 0.0.3
+- 新增build.gradle文件
