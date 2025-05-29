@@ -1,0 +1,16 @@
+name: network_connectivity_bridge
+description: A singleton connectivity bridge plugin based on connectivity_plus.
+version: 1.0.0
+homepage: https://github.com/carlcy/network_connectivity_bridge
+repository: https://github.com/carlcy/network_connectivity_bridge
+issue_tracker: https://github.com/carlcy/network_connectivity_bridge/issues
+
+environment:
+  sdk: ">=2.17.0 <4.0.0"
+
+dependencies:
+  connectivity_plus: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
