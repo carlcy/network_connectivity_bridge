@@ -8,7 +8,8 @@ abstract class NetworkConnectivityBridgePlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static NetworkConnectivityBridgePlatform _instance = MethodChannelNetworkConnectivityBridge();
+  static NetworkConnectivityBridgePlatform _instance =
+      MethodChannelNetworkConnectivityBridge();
 
   /// The default instance of [NetworkConnectivityBridgePlatform] to use.
   ///
