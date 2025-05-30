@@ -1,0 +1,18 @@
+// network_connectivity_bridge/build.gradle (项目级别)
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // 这里放 Android 构建工具依赖版本，通常 Flutter 插件默认即可
+        classpath 'com.android.tools.build:gradle:7.4.2'  // 例子，版本可以调整
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
