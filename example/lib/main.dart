@@ -6,28 +6,32 @@ import 'package:network_connectivity_bridge/network_connectivity_bridge.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await NetworkConnectivityBridge.instance.initialize(); // 初始化放这里
+  await NetworkConnectivityBridge.instance.initialize();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Connectivity Bridge Demo',
-      home: Scaffold(
-        appBar: AppBar(title: Text('Network Connectivity Bridge')),
-        body: ConnectivityStatusWidget(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        useMaterial3: true,
       ),
+      home: const ConnectivityStatusWidget(),
     );
   }
 }
 
 class ConnectivityStatusWidget extends StatefulWidget {
+  const ConnectivityStatusWidget({super.key});
+
   @override
-  State<ConnectivityStatusWidget> createState() =>
-      _ConnectivityStatusWidgetState();
+  State<ConnectivityStatusWidget> createState() => _ConnectivityStatusWidgetState();
 }
 
 class _ConnectivityStatusWidgetState extends State<ConnectivityStatusWidget> {
@@ -37,17 +41,21 @@ class _ConnectivityStatusWidgetState extends State<ConnectivityStatusWidget> {
   @override
   void initState() {
     super.initState();
+    _updateStatus(NetworkConnectivityBridge.instance.currentStatus);
     _subscription = NetworkConnectivityBridge.instance.onConnectivityChanged
-        .listen((results) {
-      setState(() {
-        if (results.contains(ConnectivityResult.wifi)) {
-          _status = 'Connected via WiFi';
-        } else if (results.contains(ConnectivityResult.mobile)) {
-          _status = 'Connected via Mobile Data';
-        } else {
-          _status = 'No Internet Connection';
-        }
-      });
+        .listen(_updateStatus);
+  }
+
+  void _updateStatus(List<ConnectivityResult>? results) {
+    if (results == null) return;
+    setState(() {
+      if (results.contains(ConnectivityResult.wifi)) {
+        _status = 'Connected via WiFi';
+      } else if (results.contains(ConnectivityResult.mobile)) {
+        _status = 'Connected via Mobile Data';
+      } else {
+        _status = 'No Internet Connection';
+      }
     });
   }
 
@@ -59,6 +67,27 @@ class _ConnectivityStatusWidgetState extends State<ConnectivityStatusWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Network Status: $_status'));
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Network Connectivity Bridge'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              _status.contains('Connected') ? Icons.wifi : Icons.wifi_off,
+              size: 64,
+              color: _status.contains('Connected') ? Colors.green : Colors.red,
+            ),
+            const SizedBox(height: 16),
+            Text(
+              _status,
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

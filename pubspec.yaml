@@ -32,3 +32,9 @@ flutter:
       web:
         pluginClass: NetworkConnectivityBridgeWeb
         fileName: network_connectivity_bridge_web.dart
+      macos:
+        pluginClass: NetworkConnectivityBridgePlugin
+      windows:
+        pluginClass: NetworkConnectivityBridgePlugin
+      linux:
+        pluginClass: NetworkConnectivityBridgePlugin

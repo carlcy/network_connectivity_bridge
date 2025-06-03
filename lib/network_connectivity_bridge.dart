@@ -10,12 +10,12 @@ class NetworkConnectivityBridge {
   NetworkConnectivityBridge._internal();
 
   static final NetworkConnectivityBridge instance =
-      NetworkConnectivityBridge._internal();
+  NetworkConnectivityBridge._internal();
 
   final Connectivity _connectivity = Connectivity();
 
   final StreamController<List<ConnectivityResult>> _controller =
-      StreamController<List<ConnectivityResult>>.broadcast();
+  StreamController<List<ConnectivityResult>>.broadcast();
 
   bool _initialized = false;
 
