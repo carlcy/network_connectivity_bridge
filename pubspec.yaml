@@ -15,11 +15,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  plugin_platform_interface: 2.1.6
+  plugin_platform_interface: ^2.1.6
   flutter_web_plugins:
     sdk: flutter
-  web: 1.1.1
-  connectivity_plus: 6.1.4
+  web: ^1.1.1
+  connectivity_plus: ^6.1.4
 
 flutter:
   plugin:
