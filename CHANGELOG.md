@@ -1,3 +1,6 @@
+## 0.1.0
+- Add (SPM) support
+
 ## 0.0.9
 - New adaptation files for macos, windows and linux have been added
 
