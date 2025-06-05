@@ -22,7 +22,11 @@ let package = Package(
                 .product(name: "FlutterMacOS", package: "flutter"),
                 .product(name: "connectivity_plus_macos", package: "connectivity_plus"),
             ],
-            path: "macos/Classes"
+            path: "macos/Classes",
+            publicHeadersPath: ".",
+            cSettings: [
+                .headerSearchPath(".")
+            ]
         ),
     ]
 ) 

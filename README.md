@@ -16,4 +16,4 @@ Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  network_connectivity_bridge: ^0.1.1
+  network_connectivity_bridge: ^0.1.2

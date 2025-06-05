@@ -1,5 +1,8 @@
+## 0.1.2
+- The configuration section of swift_package_manager has been added
+
 ## 0.1.1
-- fix some bugs
+- Fix some bugs
 
 ## 0.1.0
 - Add (SPM) support
